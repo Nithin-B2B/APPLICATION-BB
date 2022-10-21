@@ -60,7 +60,7 @@ public class Registration {
        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Verify']")).click();
        
        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Relogin']")).click();
-       
+       //Relogin
        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Login']")).click();
        driver.findElement(By.xpath("//android.widget.EditText[@text='Email or mobile number']")).click();
        driver.findElement(By.xpath("//android.widget.EditText[@text='Email or mobile number']")).sendKeys("b2b.64@gmail.com");
@@ -70,7 +70,7 @@ public class Registration {
        
        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Login']")).click();
        
-       driver.findElement(By.xpath("//android.widget.Button[@index=5]")).click();
+       driver.findElement(By.xpath("//android.widget.Button[@index=5]")).click();  
        
 
 	
