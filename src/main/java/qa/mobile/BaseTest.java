@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 import com.qa.utils.Testutils;
 
@@ -25,6 +23,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class BaseTest {
 	
 	
+	@SuppressWarnings("rawtypes")
 	protected static AppiumDriver driver;
 	protected static  Properties props;
 	InputStream inputStream;
@@ -34,7 +33,8 @@ public class BaseTest {
 	}
 	
  //@Parameters({"deviceName"})
-  @BeforeTest
+  @SuppressWarnings({ "rawtypes" })
+@BeforeTest
   public void beforeTest() throws Exception
   {
 	  try 
@@ -48,9 +48,11 @@ public class BaseTest {
 		  	DesiredCapabilities capabilities=new DesiredCapabilities();
 		  	//capabilities.setCapability("platformVersion","Android");
 			capabilities.setCapability("DeviceName","253290ed");
-			capabilities.setCapability("automationName",props.getProperty("androidAutomationName"));
-			File file=new File("C:\\Users\\vxuser\\Downloads\\ULPH_UAT_10.4.16_128.apk");
-			capabilities.setCapability("app",file.getAbsolutePath());
+			//capabilities.setCapability("appPackage", "com.vxceed.xnapp.tindahanclub.uat2");
+			//capabilities.setCapability("appActivity","com.vxceed.goordr.MainActivity ");
+			 capabilities.setCapability("automationName",props.getProperty("androidAutomationName"));
+			 File file=new File("C:\\Users\\vxuser\\Downloads\\ULPH_UAT_10.4.16_132.apk");
+			 capabilities.setCapability("app",file.getAbsolutePath());
 			 driver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),capabilities); 
 			 
 			// String sessionId=driver.getSessionId().toString();
@@ -78,14 +80,14 @@ public class BaseTest {
 	 WaitForVisibility(e);
 	 e.sendKeys(txt);
  }
- public void getAttribute(MobileElement e, String attribute) {
+ public String getAttribute(MobileElement e, String attribute) {
 	 WaitForVisibility(e);
-	 e.getAttribute(attribute);
+	 return e.getAttribute(attribute);
  }
 
   @AfterTest
   public void afterTest() {
-	  driver.quit();
+	 // driver.quit();
   }
 
 }

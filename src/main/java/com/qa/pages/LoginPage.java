@@ -12,7 +12,22 @@ public class LoginPage  extends BaseTest {
 			click(Loginbttn);
 			return new EmailPage(); 
 		}
+@AndroidFindBy(accessibility = "Skip") private MobileElement Skip;
 
+	public LoginPage pressSkip()
+	{
+		click(Skip);
+		return this;
+		
+	}
+	
+	@AndroidFindBy(id = "com.vxceed.xnapp.tindahanclub.uat2:id/collapse_button") private MobileElement Cookies;
+	
+	public LoginPage avoidCookies()
+	{
+		click(Cookies);
+		return this;
+	}
 	// driver.findElement(By.xpath("//android.widget.Button[@content-desc='Login']")).click();
 	 
 	 /*driver.findElement(By.xpath("//android.widget.EditText[@text='Email or mobile number']")).click();
