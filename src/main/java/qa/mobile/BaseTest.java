@@ -1,6 +1,5 @@
 package qa.mobile;
 
-import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
@@ -20,7 +19,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class BaseTest {
+public class BaseTest{
 	
 	
 	@SuppressWarnings("rawtypes")
@@ -28,7 +27,7 @@ public class BaseTest {
 	protected static  Properties props;
 	InputStream inputStream;
 	
-	public BaseTest() {
+	public BaseTest()  {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
@@ -47,16 +46,16 @@ public class BaseTest {
 		  
 		  	DesiredCapabilities capabilities=new DesiredCapabilities();
 		  	//capabilities.setCapability("platformVersion","Android");
-			capabilities.setCapability("DeviceName","253290ed");
-			//capabilities.setCapability("appPackage", "com.vxceed.xnapp.tindahanclub.uat2");
-			//capabilities.setCapability("appActivity","com.vxceed.goordr.MainActivity ");
+			capabilities.setCapability("DeviceName","RWKRDQG6EUXSRC7D ");//253290ed
+			capabilities.setCapability("appPackage", "com.vxceed.xnapp.tindahanclub.uat2");
+			capabilities.setCapability("appActivity","com.vxceed.goordr.MainActivity ");
 			 capabilities.setCapability("automationName",props.getProperty("androidAutomationName"));
-			 File file=new File("C:\\Users\\vxuser\\Downloads\\ULPH_UAT_10.4.16_132.apk");
-			 capabilities.setCapability("app",file.getAbsolutePath());
+			// File file=new File("C:\\Users\\vxuser\\Downloads\\ULPH_UAT_10.4.16_132.apk");
+			// capabilities.setCapability("app",file.getAbsolutePath());
 			 driver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),capabilities); 
 			 
 			// String sessionId=driver.getSessionId().toString();
-			 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS); 
+			 driver.manage().timeouts().implicitlyWait(45,TimeUnit.SECONDS); 
 	  }
 	  catch(Exception e)
 	  {
@@ -87,7 +86,7 @@ public class BaseTest {
 
   @AfterTest
   public void afterTest() {
-	 // driver.quit();
+	// driver.quit();
   }
 
 }

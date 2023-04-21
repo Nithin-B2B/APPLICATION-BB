@@ -63,13 +63,14 @@ public class LoginTests extends BaseTest {
 			Thread.sleep(8000);
 			availDisPage.select();  
 	  }
-	@Test(priority = 1) 
+	 
+	@Test(priority = 0) 
   public void invalidusername() throws InterruptedException {
-		Thread.sleep(5000);
-		emailPage=loginPage.pressLoginBtn();
-		emailPage.enterClick();
-		emailPage.enterEmail("b2b.17@gmail.com");
-		pwdPage=emailPage.pressClickBtn();
+		LoginPage loginPage=new LoginPage();
+		loginPage.pressLoginBtn();
+		loginPage.enterClick();
+		loginPage.enterEmail("b2b.17@gmail.com");
+		pwdPage=loginPage.pressNxtBtn();
 		pwdPage.enterpwd("Test123");
 		availDisPage=pwdPage.login();
 		Thread.sleep(2000);
@@ -82,7 +83,8 @@ public class LoginTests extends BaseTest {
 		
 		
   }
-	@Test(priority = 2)
+	
+	@Test(priority = 1)
 public void validusername() throws InterruptedException {
 		
 		pwdPage.clear1();
@@ -134,10 +136,10 @@ public void validusername() throws InterruptedException {
  @Test (enabled = false)
  	public void forgotPassword() throws InterruptedException
  	{
-	 emailPage=loginPage.pressLoginBtn();
-	 emailPage.enterClick();
-	 emailPage.enterEmail("b2b.840@gmail.com");
-	 pwdPage=emailPage.pressClickBtn();
+	loginPage.pressLoginBtn();
+	loginPage.enterClick();
+	loginPage.enterEmail("b2b.840@gmail.com");
+	 pwdPage=loginPage.pressNxtBtn();
 	 pwdPage.forget();
 	 Thread.sleep(10000);
 	 registerpage=new RegisterPage();

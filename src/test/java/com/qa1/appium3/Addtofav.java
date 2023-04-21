@@ -1,6 +1,5 @@
 package com.qa1.appium3;
 
-import org.apache.commons.digester.plugins.strategies.FinderFromClass;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 

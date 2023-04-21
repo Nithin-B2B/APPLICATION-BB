@@ -111,7 +111,7 @@ public HomePage confirmOrder()
 	return this;
 }
 
-@AndroidFindBy(xpath="Order Placed") private MobileElement orderSuccessMessage;
+@AndroidFindBy(accessibility ="Order Placed") private MobileElement orderSuccessMessage;
 
 public String SuccessMessage()
 {

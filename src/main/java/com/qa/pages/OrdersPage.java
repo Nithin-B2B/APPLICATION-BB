@@ -1,17 +1,12 @@
 package com.qa.pages;
 
-import org.aspectj.lang.annotation.AdviceName;
-import org.aspectj.weaver.ast.Or;
-
-import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
-
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import qa.mobile.BaseTest;
 
 public class OrdersPage extends BaseTest
 {
-	@AndroidFindBy(xpath="//android.widget.EditText[@text='What are you looking for?']") private MobileElement search;
+	@AndroidFindBy(xpath="//android.widget.EditText") private MobileElement search;
 	
 	public OrdersPage searchbar(String itemcode)
 	{
@@ -55,9 +50,9 @@ public class OrdersPage extends BaseTest
 		Thread.sleep(22000);
 		click(Cart);
 	
-		click(cartproviderhpc);//For HPC
+		//click(cartproviderhpc);//For HPC
 		//click(cartIcProvider);//For IC
-		click(proceedbtn);
+		//click(proceedbtn);
 		return this;
 	}
 	

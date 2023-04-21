@@ -16,7 +16,7 @@ public class WhiteSpaceRegistration extends BaseTest
 		return this;
 	}
 
-	@AndroidFindBy(xpath="//android.widget.EditText[@text='Building *']") private MobileElement BuildingName;
+	@AndroidFindBy(xpath="//android.widget.EditText[@index=0]") private MobileElement BuildingName;
 	
 	public WhiteSpaceRegistration enterBuildingName(String Bname)
 	{
@@ -33,7 +33,7 @@ public class WhiteSpaceRegistration extends BaseTest
 		return this;
 	}
 	
-	@AndroidFindBy(xpath="//android.widget.EditText[@text='Document Number']") private MobileElement docNum;
+	@AndroidFindBy(xpath="//android.widget.EditText") private MobileElement docNum;
 	
 	public WhiteSpaceRegistration EnterDocNo(String number)
 	{
@@ -65,5 +65,45 @@ public class WhiteSpaceRegistration extends BaseTest
 		click(slectPic);
 		
 		return this;
+	}
+	
+	@AndroidFindBy(xpath="//android.widget.EditText[@index=3]") private MobileElement Outletname;
+	public WhiteSpaceRegistration EnterOutlet(String name)
+	{
+		click(Outletname);
+		sendKeys(Outletname, name);
+		return this;
+	}
+	@AndroidFindBy(xpath="//android.widget.EditText[@index=4]") private MobileElement TaxNo;
+	
+	public WhiteSpaceRegistration EnterTaxNo(String no)
+	{
+		click(TaxNo);
+		sendKeys(TaxNo, no);
+		return this;
+	}
+	@AndroidFindBy(accessibility = "Take a Photo") private MobileElement outletPhoto;
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@text='WHILE USING THE APP']") private MobileElement allowaccess;
+	@AndroidFindBy(xpath="//android.widget.LinearLayout[@index=3]") private MobileElement capture;
+	
+	@AndroidFindBy(xpath="//android.widget.ImageView[@content-desc='Done']") private MobileElement Done4;
+	
+	@AndroidFindBy(accessibility = "Submit") private MobileElement Submit;
+	public WhiteSpaceRegistration TakeOutletPhoto()
+	{
+		click(outletPhoto);
+		click(allowaccess);
+		click(capture);
+		click(Done4);
+		click(Submit);
+		return this;
+	}
+	
+	@AndroidFindBy(accessibility = "Enrolment Pending") private MobileElement succmsg4;
+	
+	public String getSuccTxt2()
+	{
+		return getAttribute(succmsg4, "content-desc");
 	}
 }

@@ -1,17 +1,12 @@
 package com.qa1.appium3;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -34,7 +29,8 @@ public void facebook()
         int end_x=(int) (dimension.width*0.5);
         int end_y=(int) (dimension.height*0.4); 
         
-        TouchAction touch=new TouchAction(driver);
+        @SuppressWarnings("rawtypes")
+		TouchAction touch=new TouchAction(driver);
         touch.press(PointOption.point(start_x,start_y))
         .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
         .moveTo(PointOption.point(end_x,end_y)).release().perform();

@@ -3,8 +3,6 @@ package com.qa1.appium3;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.android.AndroidDriver;
-
 public class BasictestNG extends Openapplication{
 	
 	@Test

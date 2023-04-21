@@ -20,7 +20,8 @@ public class AvailableDistributor extends BaseTest {
 		return this;
 	}
 	
-	@AndroidFindBy(accessibility ="Available Provider Selecta Ice Cream") private MobileElement provider1;
+	@AndroidFindBy(accessibility ="Available Provider\r\n"
+			+ "Selecta Ice Cream") private MobileElement provider1;
 	
 	public AvailableDistributor select2()
 	{

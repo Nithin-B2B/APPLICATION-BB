@@ -24,10 +24,10 @@ public class RegisterPage extends BaseTest {
 	@AndroidFindBy(xpath="//android.widget.Switch") private MobileElement TcToggle;
 	@AndroidFindBy(xpath="//android.widget.Button[@content-desc='Next']") private MobileElement Next1;
 	@AndroidFindBy(accessibility="We cannot proceed unless you agree to T&C and Privacy Policy") private MobileElement errTxt1;
-	@AndroidFindBy(xpath="//*[contains(@text,'Email')]") private MobileElement email1;
+	@AndroidFindBy(xpath="//android.widget.EditText") private MobileElement email1;
 	@AndroidFindBy(accessibility="This email address is invalid") private MobileElement errTxt2;
-	@AndroidFindBy(xpath="(//*[contains(@text,'Password *')])[1]" )private MobileElement pass1;
-	@AndroidFindBy(xpath="//*[contains(@text,'Confirm Password *')]") private MobileElement pass2;
+	@AndroidFindBy(xpath="//android.widget.EditText[1]" )private MobileElement pass1;
+	@AndroidFindBy(xpath="//android.widget.EditText[2]") private MobileElement pass2;
 	@AndroidFindBy(xpath="//android.widget.Button[@content-desc='DONE']") private MobileElement Done;
 	@AndroidFindBy(accessibility="Password mismatch") private MobileElement errTxt3;
 	@AndroidFindBy(accessibility="Validation successful. Please login.") private MobileElement SuccTxt;
@@ -83,11 +83,28 @@ public class RegisterPage extends BaseTest {
 		sendKeys(pass1, npass);
 		return this;
 	}
+	public RegisterPage clearpass1() 
+	{
+		click(pass1);
+		pass1.clear();
+		
+		return this;
+		
+	}
 	public RegisterPage cPass(String cpass)
 	{
 		click(pass2);
 		sendKeys(pass2, cpass);
 		return this;
+	}
+	
+	public RegisterPage clearpass2() 
+	{
+		click(pass2);
+		pass2.clear();
+		
+		return this;
+		
 	}
 	public RegisterPage Ddone()
 	{

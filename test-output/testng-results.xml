@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="2" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-21T09:34:20Z" name="Default suite" finished-at="2022-10-21T09:36:24Z" duration-ms="123804">
+  <suite name="Suite" duration-ms="45908" started-at="2023-04-20T12:11:49 IST" finished-at="2023-04-20T12:12:35 IST">
     <groups>
     </groups>
-    <test started-at="2022-10-21T09:34:20Z" name="Default test" finished-at="2022-10-21T09:36:24Z" duration-ms="123804">
-      <class name="com.qa1.appium3.Registration">
-        <test-method signature="AppiumTest()[pri:0, instance:com.qa1.appium3.Registration@6c0d7c83]" started-at="2022-10-21T15:04:20Z" name="AppiumTest" finished-at="2022-10-21T15:06:24Z" duration-ms="123789" status="PASS">
+    <test name="Test" duration-ms="45908" started-at="2023-04-20T12:11:49 IST" finished-at="2023-04-20T12:12:35 IST">
+      <class name="com.qa.tests.LoginTest2">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.qa.tests.LoginTest2@3e0fbeb5]" name="beforeTest" is-config="true" duration-ms="20065" started-at="2023-04-20T12:11:49 IST" finished-at="2023-04-20T12:12:09 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AppiumTest -->
-      </class> <!-- com.qa1.appium3.Registration -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Login2()[pri:0, instance:com.qa.tests.LoginTest2@3e0fbeb5]" name="Login2" duration-ms="13049" started-at="2023-04-20T12:12:09 IST" finished-at="2023-04-20T12:12:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login2 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.qa.tests.LoginTest2@3e0fbeb5]" name="afterTest" is-config="true" duration-ms="0" started-at="2023-04-20T12:12:35 IST" finished-at="2023-04-20T12:12:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.qa.tests.LoginTest2 -->
+      <class name="com.qa.tests.WhiteSpaceTests">
+        <test-method status="PASS" signature="WhitespaceStep1()[pri:0, instance:com.qa.tests.WhiteSpaceTests@dd2856e]" name="WhitespaceStep1" duration-ms="6217" started-at="2023-04-20T12:12:22 IST" finished-at="2023-04-20T12:12:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WhitespaceStep1 -->
+        <test-method status="PASS" signature="WhitespaceStep2()[pri:1, instance:com.qa.tests.WhiteSpaceTests@dd2856e]" name="WhitespaceStep2" duration-ms="6395" started-at="2023-04-20T12:12:28 IST" finished-at="2023-04-20T12:12:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WhitespaceStep2 -->
+        <test-method status="PASS" signature="WhitespaceStep3()[pri:2, instance:com.qa.tests.WhiteSpaceTests@dd2856e]" name="WhitespaceStep3" duration-ms="5" started-at="2023-04-20T12:12:35 IST" finished-at="2023-04-20T12:12:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WhitespaceStep3 -->
+      </class> <!-- com.qa.tests.WhiteSpaceTests -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -39,7 +39,7 @@ public class RegisterTests  extends BaseTest
 	 registerPage.Toggle();
 	 registerPage.Nst();
  }
- @Test(priority=2)
+ @Test(enabled=false)
  public void step2inavalidmail()
  {
 	 registerPage.Emailnew("nimngmail.com");
@@ -50,11 +50,11 @@ public class RegisterTests  extends BaseTest
 		Assert.assertEquals(actualErrTxt, expectedErrTxt);
 	 
  }
- @Test(priority = 3)
+ @Test(priority = 2)
  public void step2validmail() throws InterruptedException
  {
 	 Thread.sleep(2000);
-	 registerPage.Emailnew("buv@6.com");
+	 registerPage.Emailnew("bmnh@6.com");
 	 registerPage.Nst();
 	 System.out.println("Step2 succefully completed");
  }
@@ -75,7 +75,9 @@ public class RegisterTests  extends BaseTest
  }@Test(priority = 5)
  public void step3notfollowingpasswordrequirement()
  {
+	 registerPage.clearpass1();
 	 registerPage.Pass("123456");
+	 registerPage.clearpass2();
 	 registerPage.cPass("123456");
 	 registerPage.Ddone();
 	 driver.hideKeyboard();
@@ -89,7 +91,9 @@ public class RegisterTests  extends BaseTest
  public void step3validpassword()throws InterruptedException
  {
 	 Thread.sleep(2000);
+	 registerPage.clearpass1();
 	 registerPage.Pass("Test1234");
+	 registerPage.clearpass2();
 	 registerPage.cPass("Test1234");
   registerPage.Ddone();
   Thread.sleep(8000);

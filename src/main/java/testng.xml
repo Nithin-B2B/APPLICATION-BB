@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
+  <listeners>
+<listener class-name="com.qa.tests.MyTestListener"/>
+</listeners>
+
+
+
   <test name="Test">
     <classes>
-      <class name="com.qa.tests.LoginTests"/>
-      <methods>
-      <exclude name="selectprovider"/>
-      <exclude name="explore1"/>
-      <exclude name="invalidoutletcode"/>
-	 <exclude name="validoutletCode"/>
-	 <exclude name="forgotPassword"/>
-	 </methods>
-	<class name="com.qa.tests.OrdersTest"/>
+    <class name="com.qa.tests.LoginTest2"/>
+      <class name="com.qa.tests.WhiteSpaceTests"/>
+  
     </classes>
     
   </test> <!-- Test -->

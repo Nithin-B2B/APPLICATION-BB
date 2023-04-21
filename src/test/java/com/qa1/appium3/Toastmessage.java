@@ -11,13 +11,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
 
 public class Toastmessage extends Openapplication {
 
+	@SuppressWarnings("unchecked")
 	@Test
 	public void toast() throws InterruptedException, IOException
 	{
@@ -65,8 +65,6 @@ public class Toastmessage extends Openapplication {
 	    	System.out.println(b13.getAttribute("content-desc"));
 	    		
 	    }
-	    WebElement toastView = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Invalid User Name/Password\"]"));
-	    String text = toastView.getAttribute("content-desc");
 	}
 	      //WebElement toastmessage=driver.findElement(By.xpath("(//android.view.View[@content-desc='Login Failed Invalid User Name/Password']"));
 	     //System.out.println(toastmessage.getAttribute("content-desc"));

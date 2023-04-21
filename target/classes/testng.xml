@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
+  <listeners>
+<listener class-name="com.qa.tests.MyTestListener"/>
+</listeners>
+
+
+
   <test name="Test">
     <classes>
-      <class name="com.qa.tests.LoginTests"/>
+    <class name="com.qa.tests.LoginTest2"/>
+      <class name="com.qa.tests.WhiteSpaceTests"/>
+  
     </classes>
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+

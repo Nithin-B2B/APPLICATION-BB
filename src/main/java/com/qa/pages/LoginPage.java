@@ -8,9 +8,9 @@ public class LoginPage  extends BaseTest {
 	
 	@AndroidFindBy(xpath="//android.widget.Button[@content-desc='Login']") private MobileElement Loginbttn;
 	
-		public EmailPage pressLoginBtn() {
+		public LoginPage pressLoginBtn() {
 			click(Loginbttn);
-			return new EmailPage(); 
+			return this; 
 		}
 @AndroidFindBy(accessibility = "Skip") private MobileElement Skip;
 
@@ -28,24 +28,32 @@ public class LoginPage  extends BaseTest {
 		click(Cookies);
 		return this;
 	}
-	// driver.findElement(By.xpath("//android.widget.Button[@content-desc='Login']")).click();
+
+	
+	@AndroidFindBy(className="android.widget.EditText") private MobileElement EmailTxtField;
+	//public String getTitle() {
+		//return getAttribute(EmailTxtField,"text");
+		
+	//}
 	 
-	 /*driver.findElement(By.xpath("//android.widget.EditText[@text='Email or mobile number']")).click();
-	 
-	 driver.findElement(By.xpath("//android.widget.EditText[@text='Email or mobile number']")).sendKeys("b2b.20@gmail.com");
-	 driver.findElement(By.xpath("//android.widget.Button[@content-desc='Next']")).click();
-	 
-	 
-	 List<WebElement> bn2=driver.findElementsByClassName("android.widget.EditText");
-	 System.out.println("Text are avialable in password field: "+bn2.size());
-	 
-	for(WebElement bn3:bn2)
-	{
-		System.out.println(bn3.getAttribute("text"));
-		 if(bn3.getAttribute("text").equals("Password *")) 
-		 { 
-			 bn3.click();
-			 bn3.sendKeys("Manila1234");
-		 }	 
-	}*/
+	public LoginPage enterClick()
+	 {
+		 click(EmailTxtField);
+		 return  this;
+		 
+	 }
+	@AndroidFindBy(className="android.widget.EditText") private MobileElement EmailTxtField1;
+	
+	public LoginPage enterEmail(String username) {
+	
+		sendKeys(EmailTxtField1, username);
+		return this;
+	}
+	//driver.findElement(By.xpath("//android.widget.Button[@content-desc='Next']")).click();
+@AndroidFindBy(xpath="//android.widget.Button[@content-desc='Next']") private MobileElement Nextbtn;
+	
+	public PwdPage pressNxtBtn() {
+		click(Nextbtn);
+		return new PwdPage();
+	}
 }
